@@ -126,10 +126,11 @@ export function scoreScheme(profile, scheme) {
   };
 }
 
-export function recommendSchemes(profile, schemes, limit = 12) {
-  return schemes
+export function recommendSchemes(profile, schemes, limit = undefined) {
+  const eligibleSchemas = schemes
     .map((scheme) => scoreScheme(profile, scheme))
     .filter((scheme) => scheme.eligible)
-    .sort((a, b) => b.matchScore - a.matchScore || a.title.localeCompare(b.title))
-    .slice(0, limit);
+    .sort((a, b) => b.matchScore - a.matchScore || a.title.localeCompare(b.title));
+
+  return limit == null ? eligibleSchemas : eligibleSchemas.slice(0, limit);
 }

@@ -67,9 +67,9 @@ function renderCards() {
     return;
   }
 
-  setStatus(`Showing ${visibleSchemes.length} matched scheme${visibleSchemes.length === 1 ? "" : "s"}.`);
+  setStatus(`Showing ${visibleSchemes.length} matching scheme${visibleSchemes.length === 1 ? "" : "s"}.`);
 
-  visibleSchemes.forEach((scheme) => {
+visibleSchemes.forEach((scheme) => {
     const card = document.createElement("article");
     card.className = "scheme-card";
     card.innerHTML = `
@@ -83,6 +83,7 @@ function renderCards() {
       <p><strong>Benefits:</strong> ${escapeHtml(scheme.benefits || "Benefit details unavailable from the API response.")}</p>
       <p><strong>Eligibility:</strong> ${escapeHtml(scheme.eligibility || "Eligibility details unavailable from the API response.")}</p>
       <p><strong>Why matched:</strong> ${escapeHtml(scheme.matchReason)}</p>
+      ${scheme.sourceUrl ? `<p><strong>Source:</strong> <a href="${escapeHtml(scheme.sourceUrl)}" target="_blank">${escapeHtml(scheme.sourceUrl)}</a></p>` : ""}
     `;
     cardsEl.append(card);
   });
@@ -114,3 +115,5 @@ form.addEventListener("submit", (event) => {
 
 searchEl.addEventListener("input", renderCards);
 categoryFilterEl.addEventListener("change", renderCards);
+
+

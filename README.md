@@ -35,6 +35,12 @@ A direct test from this machine returned `Unauthorized`, so the app includes opt
 
 For demos without API access, click `Use local sample data` in the sidebar. The sample file is `data/schemes.json`; replace or expand it with scheme details copied from official myScheme scheme pages.
 
+## Data Sources and Verification
+
+- Official portal: [https://www.myscheme.gov.in/](https://www.myscheme.gov.in/)
+- Official API endpoint: `https://api.myscheme.gov.in/search/v4/schemes`
+- Verify every scheme on the official government scheme page before applying
+
 ## Team Responsibilities Covered
 
 ### Person 1 - API Integration Lead

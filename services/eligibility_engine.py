@@ -2,6 +2,13 @@
 from typing import Any
 
 MAX_SCORE = 99
+OCCUPATION_TAGS = {
+    "student": {"student", "scholarship", "education", "school", "college"},
+    "farmer": {"farmer", "agriculture", "crop", "landholder"},
+    "entrepreneur": {"entrepreneur", "business", "msme", "startup", "enterprise", "loan"},
+    "worker": {"worker", "labour", "labor", "unorganised worker", "pension"},
+    "unemployed": {"unemployed", "skill", "training", "job", "placement", "livelihood"},
+}
 
 
 def normalize(value: Any) -> str:
@@ -13,8 +20,57 @@ def includes_any(text: str, values: list[str]) -> bool:
     return any(normalize(value) in lowered for value in values)
 
 
+def normalized_tags(scheme: dict[str, Any]) -> set[str]:
+    tags = scheme.get("tags", [])
+    if isinstance(tags, str):
+        tags = [tags]
+    return {normalize(tag) for tag in tags if normalize(tag)}
+
+
 def scheme_text(scheme: dict[str, Any]) -> str:
-    return " ".join(str(scheme.get(key, "")) for key in ["title", "description", "benefits", "eligibility", "category", "level"])
+    return " ".join(str(scheme.get(key, "")) for key in ["title", "description", "benefits", "eligibility", "category", "level", "state", "tags"])
+
+
+def is_student_scheme(text: str) -> bool:
+    return includes_any(text, ["student", "scholarship", "education", "matric", "school", "college"])
+
+
+def is_farmer_scheme(text: str) -> bool:
+    return includes_any(text, ["farmer", "agriculture", "crop", "landholder", "land holder", "rythu"])
+
+
+def is_entrepreneur_scheme(text: str) -> bool:
+    return includes_any(text, ["business", "msme", "startup", "enterprise", "entrepreneur"])
+
+
+def is_worker_scheme(text: str) -> bool:
+    return includes_any(text, ["worker", "labour", "labor", "employment", "wage"])
+
+
+def is_unemployed_scheme(text: str) -> bool:
+    return includes_any(text, ["unemployed", "employment", "skill", "training", "job", "placement", "livelihood"])
+
+
+def matches_selected_occupation(profile: dict[str, Any], scheme: dict[str, Any], text: str) -> bool:
+    occupation = normalize(profile.get("occupation"))
+    tags = normalized_tags(scheme)
+    expected_tags = OCCUPATION_TAGS.get(occupation)
+
+    if expected_tags and tags:
+        return bool(tags & expected_tags)
+
+    if occupation == "student":
+        return is_student_scheme(text)
+    if occupation == "farmer":
+        return is_farmer_scheme(text)
+    if occupation == "entrepreneur":
+        return is_entrepreneur_scheme(text)
+    if occupation == "worker":
+        return is_worker_scheme(text)
+    if occupation == "unemployed":
+        return is_unemployed_scheme(text)
+
+    return True
 
 
 def income_ceiling_from_text(text: str) -> int | None:
@@ -33,7 +89,10 @@ def age_range_from_text(text: str) -> tuple[int | None, int | None]:
     return (int(lower.group(1)) if lower else None, int(upper.group(1)) if upper else None)
 
 
-def disqualified_by_hard_rules(profile: dict[str, Any], text: str) -> bool:
+def disqualified_by_hard_rules(profile: dict[str, Any], scheme: dict[str, Any], text: str) -> bool:
+    if not matches_selected_occupation(profile, scheme, text):
+        return True
+
     gender = normalize(profile.get("gender"))
     if gender and gender != "any":
         women_only = includes_any(text, ["women", "woman", "female", "girl"])
@@ -45,7 +104,7 @@ def disqualified_by_hard_rules(profile: dict[str, Any], text: str) -> bool:
 
     category = normalize(profile.get("category"))
     if category and category != "any":
-        limited = includes_any(text, ["scheduled caste", "scheduled tribe", "sc ", "st ", "obc", "minority"])
+        limited = includes_any(text, ["scheduled caste", "scheduled tribe", "sc ", "st ", "obc", "minority", "minorities"])
         if limited and not includes_any(text, [category]):
             return True
 
@@ -62,17 +121,25 @@ def disqualified_by_hard_rules(profile: dict[str, Any], text: str) -> bool:
     return False
 
 
-def occupation_score(profile: dict[str, Any], text: str) -> int:
+def occupation_score(profile: dict[str, Any], scheme: dict[str, Any], text: str) -> int:
     occupation = normalize(profile.get("occupation"))
-    if profile.get("student") and includes_any(text, ["student", "scholarship", "education", "matric", "school", "college"]):
+    tags = normalized_tags(scheme)
+    expected_tags = OCCUPATION_TAGS.get(occupation, set())
+
+    if expected_tags and tags & expected_tags:
+        return 28
+
+    if occupation == "student" and profile.get("student") and is_student_scheme(text):
         return 24
     if occupation and includes_any(text, [occupation]):
         return 24
-    if occupation == "farmer" and includes_any(text, ["agriculture", "crop", "farmer"]):
+    if occupation == "farmer" and is_farmer_scheme(text):
         return 24
-    if occupation == "entrepreneur" and includes_any(text, ["business", "msme", "startup", "enterprise"]):
+    if occupation == "entrepreneur" and is_entrepreneur_scheme(text):
         return 24
-    if occupation == "worker" and includes_any(text, ["worker", "labour", "labor", "employment"]):
+    if occupation == "worker" and is_worker_scheme(text):
+        return 24
+    if occupation == "unemployed" and is_unemployed_scheme(text):
         return 24
     return 8
 
@@ -103,12 +170,12 @@ def category_score(profile: dict[str, Any], text: str) -> int:
 
 def score_scheme(profile: dict[str, Any], scheme: dict[str, Any]) -> dict[str, Any]:
     text = scheme_text(scheme)
-    if disqualified_by_hard_rules(profile, text):
+    if disqualified_by_hard_rules(profile, scheme, text):
         return {**scheme, "eligible": False, "match_score": 0, "match_reason": "Filtered out by a detected hard rule."}
 
     score = min(
         MAX_SCORE,
-        20 + income_score(profile, text) + location_score(profile, text) + occupation_score(profile, text) + category_score(profile, text),
+        20 + income_score(profile, text) + location_score(profile, text) + occupation_score(profile, scheme, text) + category_score(profile, text),
     )
     return {
         **scheme,
@@ -118,7 +185,8 @@ def score_scheme(profile: dict[str, Any], scheme: dict[str, Any]) -> dict[str, A
     }
 
 
-def recommend_schemes(profile: dict[str, Any], schemes: list[dict[str, Any]], limit: int = 12) -> list[dict[str, Any]]:
+def recommend_schemes(profile: dict[str, Any], schemes: list[dict[str, Any]], limit: int | None = None) -> list[dict[str, Any]]:
     scored = [score_scheme(profile, scheme) for scheme in schemes]
     eligible = [scheme for scheme in scored if scheme["eligible"]]
-    return sorted(eligible, key=lambda item: (-item["match_score"], item["title"]))[:limit]
+    ordered = sorted(eligible, key=lambda item: (-item["match_score"], item["title"]))
+    return ordered if limit is None else ordered[:limit]
