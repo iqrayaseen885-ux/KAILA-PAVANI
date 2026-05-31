@@ -1,6 +1,7 @@
 ﻿import html
 from typing import Any
 import json
+from urllib.parse import quote_plus
 
 import streamlit as st
 
@@ -53,7 +54,7 @@ def load_local_sample_data() -> list[dict[str, Any]]:
 
 
 def render_scheme_card(scheme: dict[str, Any]) -> None:
-    source_url = scheme.get("source_url")
+    source_url = scheme.get("source_url") or f"https://www.myscheme.gov.in/search?q={quote_plus(scheme.get('title', ''))}"
 
     st.markdown(
         f"""
@@ -67,7 +68,8 @@ def render_scheme_card(scheme: dict[str, Any]) -> None:
             <p>{safe(scheme['description'] or 'Description unavailable from the API response.')}</p>
             <p><strong>Benefits:</strong> {safe(scheme['benefits'] or 'Benefit details unavailable from the API response.')}</p>
             <p><strong>Eligibility:</strong> {safe(scheme['eligibility'] or 'Eligibility details unavailable from the API response.')}</p>
-            <p><strong>Source:</strong> <a href="{safe(source_url)}" target="_blank">{safe(source_url or "Official source")}</a></p>
+            <p><strong>Reference:</strong> {safe(scheme.get('reference_text', 'Official myScheme portal and trusted government sources.'))}</p>
+            <p><strong>Source:</strong> <a href="{safe(source_url)}" target="_blank">View official scheme details</a></p>
             <p><strong>Why matched:</strong> {safe(scheme['match_reason'])}</p>
         </div>
         """,
@@ -163,4 +165,3 @@ with left:
             render_scheme_card(scheme)
     elif schemes:
         st.warning("No recommended schemes match the current search or category filter.")
-

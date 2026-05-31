@@ -1,244 +1,182 @@
-﻿[
-    {
-        "scheme_name": "Post Matric Scholarships Scheme for Minorities",
-        "description": "A scholarship scheme for students from minority communities studying from class 11 to Ph.D. level.",
-        "benefits": "Scholarship support for eligible course fees and maintenance allowance as per official scheme rules.",
-        "eligibility": "Applicant should belong to a notified minority community, be studying in a recognized institution, and meet the official family income and academic criteria.",
-        "category": "Scholarship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Student",
-            "Scholarship",
-            "Minority",
-            "Post Matric"
-        ],
-        "source_url": "https://scholarships.gov.in/"
-    },
-    {
-        "scheme_name": "Pragati Scholarship Scheme for Girl Students",
-        "description": "A scholarship scheme for girl students admitted to technical diploma or degree courses in AICTE-approved institutions.",
-        "benefits": "Financial assistance for eligible girl students as per official AICTE scheme rules.",
-        "eligibility": "Applicant should be a girl student admitted to the first year or lateral entry of an eligible technical course and meet the official family income criteria.",
-        "category": "Scholarship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Female",
-            "Student",
-            "Technical Education",
-            "Scholarship"
-        ],
-        "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions"
-    },
-    {
-        "scheme_name": "Saksham Scholarship Scheme for Specially Abled Students",
-        "description": "A scholarship scheme for specially abled students pursuing technical education in AICTE-approved institutions.",
-        "benefits": "Financial assistance for eligible specially abled students as per official AICTE scheme rules.",
-        "eligibility": "Applicant should be a specially abled student admitted to an eligible technical diploma or degree course and meet the official disability and income criteria.",
-        "category": "Scholarship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Student",
-            "Scholarship",
-            "Disability",
-            "Technical Education"
-        ],
-        "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions"
-    },
-    {
-        "scheme_name": "National Means-cum-Merit Scholarship Scheme",
-        "description": "A scholarship scheme to support meritorious students from economically weaker sections and reduce dropout at secondary stage.",
-        "benefits": "Scholarship support for selected eligible students as per official scheme rules.",
-        "eligibility": "Applicant should be a student selected through the official process and meet the income, class, and academic conditions stated by the scheme.",
-        "category": "Scholarship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Student",
-            "Scholarship",
-            "School",
-            "Merit"
-        ],
-        "source_url": "https://scholarships.gov.in/"
-    },
-    {
-        "scheme_name": "PM YASASVI Central Sector Scheme of Top Class Education in Schools for OBC, EBC and DNT Students",
-        "description": "A scholarship scheme for eligible OBC, EBC and DNT students studying in identified schools.",
-        "benefits": "Scholarship support for eligible school education expenses as per official scheme rules.",
-        "eligibility": "Applicant should belong to eligible OBC, EBC or DNT categories, study in an identified school, and meet the official income and academic criteria.",
-        "category": "Scholarship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Student",
-            "Scholarship",
-            "OBC",
-            "School"
-        ],
-        "source_url": "https://scholarships.gov.in/"
-    },
-    {
-        "scheme_name": "Telangana Post Matric Scholarship",
-        "description": "A Telangana scholarship scheme supporting eligible students from specified communities pursuing post-matric education.",
-        "benefits": "Reimbursement or scholarship support as per Telangana government scheme rules.",
-        "eligibility": "Applicant should be a Telangana student from an eligible category, studying a post-matric course, and meet the official income and course conditions.",
-        "category": "Scholarship",
-        "level": "State Government",
-        "state": "Telangana",
-        "tags": [
-            "Student",
-            "Scholarship",
-            "Telangana",
-            "Post Matric"
-        ],
-        "source_url": "https://telanganaepass.cgg.gov.in/"
-    },
-    {
-        "scheme_name": "Chief Minister Overseas Scholarship Scheme for Minorities, Telangana",
-        "description": "A Telangana scheme supporting eligible minority students pursuing higher education overseas.",
-        "benefits": "Financial assistance for overseas higher education as per Telangana government rules.",
-        "eligibility": "Applicant should belong to an eligible minority community in Telangana, secure admission abroad, and meet the official income, age, and academic criteria.",
-        "category": "Scholarship",
-        "level": "State Government",
-        "state": "Telangana",
-        "tags": [
-            "Student",
-            "Scholarship",
-            "Minority",
-            "Telangana",
-            "Higher Education"
-        ],
-        "source_url": "https://telanganaepass.cgg.gov.in/"
-    },
-    {
-        "scheme_name": "Rythu Bandhu Scheme",
-        "description": "A Telangana agriculture investment support scheme for eligible farmers.",
-        "benefits": "Investment support for agriculture as per Telangana government scheme rules.",
-        "eligibility": "Applicant should be an eligible farmer or landholder as defined by the Telangana government scheme rules.",
-        "category": "Agriculture",
-        "level": "State Government",
-        "state": "Telangana",
-        "tags": [
-            "Farmer",
-            "Agriculture",
-            "Telangana"
-        ],
-        "source_url": "https://rythubandhu.telangana.gov.in/"
-    },
-    {
-        "scheme_name": "Pradhan Mantri Kisan Samman Nidhi",
-        "description": "A central government income support scheme for eligible farmer families.",
-        "benefits": "Income support is provided to eligible farmer families as per official scheme rules.",
-        "eligibility": "Applicant should be an eligible farmer family and must satisfy the exclusion and landholding rules defined by the Government of India.",
-        "category": "Agriculture",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Farmer",
-            "Agriculture",
-            "Income Support"
-        ],
-        "source_url": "https://pmkisan.gov.in/"
-    },
-    {
-        "scheme_name": "Pradhan Mantri Fasal Bima Yojana",
-        "description": "A crop insurance scheme for eligible farmers against notified crop risks.",
-        "benefits": "Crop insurance support is available for eligible farmers and notified crops as per official scheme rules.",
-        "eligibility": "Applicant should be an eligible farmer growing notified crops in a notified area and meet the official enrolment conditions.",
-        "category": "Agriculture",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Farmer",
-            "Agriculture",
-            "Crop",
-            "Insurance"
-        ],
-        "source_url": "https://pmfby.gov.in/"
-    },
-    {
-        "scheme_name": "Prime Minister's Employment Generation Programme",
-        "description": "A credit-linked subsidy scheme for setting up new micro-enterprises in non-farm sectors.",
-        "benefits": "Financial assistance and subsidy support are available for eligible new enterprises as per official scheme rules.",
-        "eligibility": "Applicant should be eligible to set up a new enterprise and meet the official age, project, and funding conditions.",
-        "category": "Entrepreneurship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Entrepreneur",
-            "Unemployed",
-            "Business",
-            "MSME",
-            "Enterprise",
-            "Employment"
-        ],
-        "source_url": "https://www.msme.gov.in/"
-    },
-    {
-        "scheme_name": "MUDRA Loan Scheme",
-        "description": "A scheme supporting eligible micro and small business borrowers through loans under Shishu, Kishor, and Tarun categories.",
-        "benefits": "Loan support is available for eligible non-corporate, non-farm micro and small enterprises as per official rules.",
-        "eligibility": "Applicant should run or plan an eligible income-generating micro or small enterprise and satisfy lender and scheme conditions.",
-        "category": "Entrepreneurship",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Entrepreneur",
-            "Business",
-            "MSME",
-            "Loan",
-            "Enterprise"
-        ],
-        "source_url": "https://www.mudra.org.in/"
-    },
-    {
-        "scheme_name": "e-Shram Card",
-        "description": "A national database and identity support initiative for eligible unorganised workers.",
-        "benefits": "Eligible workers can receive an e-Shram card and access benefits linked to official government schemes.",
-        "eligibility": "Applicant should be an eligible unorganised worker and meet the official age and employment conditions.",
-        "category": "Labour Welfare",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Worker",
-            "Labour",
-            "Employment",
-            "Unorganised Worker"
-        ],
-        "source_url": "https://eshram.gov.in/"
-    },
-    {
-        "scheme_name": "Pradhan Mantri Shram Yogi Maandhan",
-        "description": "A pension scheme for eligible unorganised workers.",
-        "benefits": "Pension benefit is available after meeting contribution and age conditions as per official scheme rules.",
-        "eligibility": "Applicant should be an eligible unorganised worker and meet the official income, age, and contribution conditions.",
-        "category": "Labour Welfare",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Worker",
-            "Labour",
-            "Pension",
-            "Unorganised Worker"
-        ],
-        "source_url": "https://pmsym.gov.in/"
-    },
-    {
-        "scheme_name": "Pradhan Mantri Kaushal Vikas Yojana",
-        "description": "A skill development scheme for eligible youth and job seekers.",
-        "benefits": "Skill training and certification support are available as per official scheme rules.",
-        "eligibility": "Applicant should meet the official age, training, and candidate conditions for the selected course or training centre.",
-        "category": "Skill Development",
-        "level": "Central Government",
-        "state": "Central",
-        "tags": [
-            "Unemployed",
-            "Employment",
-            "Skill",
-            "Training"
-        ],
-        "source_url": "https://www.pmkvyofficial.org/"
-    }
+[
+  {
+    "id": 1,
+    "title": "PM Kisan Samman Nidhi",
+    "description": "Direct income support to all farmers with cultivable land",
+    "benefits": "₹6000 per year in 3 installments",
+    "eligibility": "All farmers with cultivable land",
+    "category": "Agriculture",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://pmkisan.gov.in/",
+    "reference_text": "Official source: PM Kisan portal; Ministry of Agriculture and Farmers Welfare"
+  },
+  {
+    "id": 2,
+    "title": "Pradhan Mantri Mudra Loan Yojana",
+    "description": "Loans up to ₹10 lakh for non-collateral based micro enterprises",
+    "benefits": "Up to ₹10,00,000 loan without collateral",
+    "eligibility": "Entrepreneurs with new or existing micro enterprises",
+    "category": "Entrepreneurship",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.mudra.org.in/",
+    "reference_text": "Official source: MUDRA portal; Ministry of Micro, Small and Medium Enterprises"
+  },
+  {
+    "id": 3,
+    "title": "Pradhan Mantri Scholarship Scheme",
+    "description": "Scholarship for wards of freedom fighters",
+    "benefits": "₹60,000-₹1,00,000 per year for eligible students",
+    "eligibility": "Students whose parents were freedom fighters",
+    "category": "Scholarship",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://scholarships.gov.in/",
+    "reference_text": "Official source: Scholarships portal; Ministry of Education"
+  },
+  {
+    "id": 4,
+    "title": "National Apprenticeship Promotion Scheme",
+    "description": "Vocational training and apprenticeships for youth",
+    "benefits": "Stipend and training allowance",
+    "eligibility": "Youth aged 15-28 years",
+    "category": "Skill Development",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.pmkvyofficial.org/",
+    "reference_text": "Official source: PMKVY portal; Ministry of Skill Development and Entrepreneurship"
+  },
+  {
+    "id": 5,
+    "title": "e-Shram Registration",
+    "description": "Social security coverage for unorganized workers",
+    "benefits": "Access to multiple welfare schemes and insurance",
+    "eligibility": "Unorganized workers and informal sector employees",
+    "category": "Labour & Employment",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://eshram.gov.in/",
+    "reference_text": "Official source: e-Shram portal; Ministry of Labour and Employment"
+  },
+  {
+    "id": 6,
+    "title": "Ayushman Bharat - PMJAY",
+    "description": "Health insurance coverage for eligible families",
+    "benefits": "₹5 lakh health insurance coverage per family per year",
+    "eligibility": "Families below poverty line and target households",
+    "category": "Healthcare",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.myscheme.gov.in/search?q=%22Ayushman%20Bharat%22",
+    "reference_text": "Official source: myScheme portal; Ministry of Labour and Employment"
+  },
+  {
+    "id": 7,
+    "title": "Telangana Rythu Bandhu",
+    "description": "Agricultural investment support scheme for farmers in Telangana",
+    "benefits": "₹5,000 per acre per season as investment support",
+    "eligibility": "Farmers with cultivable land in Telangana",
+    "category": "Agriculture",
+    "level": "State",
+    "state": "Telangana",
+    "source_url": "https://www.telangana.gov.in/",
+    "reference_text": "Official source: Telangana Government website; Department of Agriculture"
+  },
+  {
+    "id": 8,
+    "title": "Telangana Unemployment Allowance",
+    "description": "Financial assistance for unemployed youth in Telangana",
+    "benefits": "₹2,500 monthly allowance",
+    "eligibility": "Unemployed graduates aged 18-29 in Telangana",
+    "category": "Employment",
+    "level": "State",
+    "state": "Telangana",
+    "source_url": "https://www.telangana.gov.in/",
+    "reference_text": "Official source: Telangana Government website; Department of Employment"
+  },
+  {
+    "id": 9,
+    "title": "PM Shri Scheme",
+    "description": "Excellence in education through school development",
+    "benefits": "Infrastructure development and teacher training",
+    "eligibility": "Schools in participating states/UTs",
+    "category": "Education",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.myscheme.gov.in/search?q=%22PM%20Shri%20Scheme%22",
+    "reference_text": "Official source: myScheme portal; Ministry of Education"
+  },
+  {
+    "id": 10,
+    "title": "Sukanya Samriddhi Yojana",
+    "description": "Savings scheme for the girl child",
+    "benefits": "High interest rates and tax benefits",
+    "eligibility": "Girls aged below 10 years",
+    "category": "Women & Child",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.myscheme.gov.in/search?q=%22Sukanya%20Samriddhi%20Yojana%22",
+    "reference_text": "Official source: myScheme portal; Ministry of Women and Child Development"
+  },
+  {
+    "id": 11,
+    "title": "PM-YASHASVI",
+    "description": "Scholarship for economically weaker students",
+    "benefits": "₹75,000-₹1,25,000 scholarship per year",
+    "eligibility": "Students from economically weaker backgrounds",
+    "category": "Scholarship",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://scholarships.gov.in/",
+    "reference_text": "Official source: Scholarships portal; Ministry of Education"
+  },
+  {
+    "id": 12,
+    "title": "National Career Service (NCS)",
+    "description": "Employment guidance and job placement services",
+    "benefits": "Career counseling and job matching",
+    "eligibility": "Job seekers and employers",
+    "category": "Employment",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.myscheme.gov.in/search?q=%22National%20Career%20Service%22",
+    "reference_text": "Official source: myScheme portal; Ministry of Labour and Employment"
+  },
+  {
+    "id": 13,
+    "title": "Pradhan Mantri Awas Yojana",
+    "description": "Affordable housing for economically weaker sections",
+    "benefits": "Affordable housing units and subsidy on loans",
+    "eligibility": "Families from EWS and LIG categories",
+    "category": "Housing",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.myscheme.gov.in/search?q=%22Pradhan%20Mantri%20Awas%20Yojana%22",
+    "reference_text": "Official source: myScheme portal; Ministry of Housing and Urban Affairs"
+  },
+  {
+    "id": 14,
+    "title": "National Health Mission",
+    "description": "Healthcare strengthening and disease prevention",
+    "benefits": "Improved healthcare services and disease prevention",
+    "eligibility": "All citizens",
+    "category": "Healthcare",
+    "level": "National",
+    "state": "All India",
+    "source_url": "https://www.myscheme.gov.in/search?q=%22National%20Health%20Mission%22",
+    "reference_text": "Official source: myScheme portal; Ministry of Health and Family Welfare"
+  },
+  {
+    "id": 15,
+    "title": "Telangana Merit-cum-Means Scholarship",
+    "description": "Scholarship for meritorious students from low-income families",
+    "benefits": "₹1,000-₹5,000 per month",
+    "eligibility": "Students with merit and low family income in Telangana",
+    "category": "Scholarship",
+    "level": "State",
+    "state": "Telangana",
+    "source_url": "https://www.telangana.gov.in/",
+    "reference_text": "Official source: Telangana Government website; Department of Education"
+  }
 ]
