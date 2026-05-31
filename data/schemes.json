@@ -1,0 +1,82 @@
+﻿[
+  {
+    "scheme_name": "Post Matric Scholarships Scheme for Minorities",
+    "description": "A scholarship scheme for students from minority communities studying from class 11 to Ph.D. level.",
+    "benefits": "Scholarship support for eligible course fees and maintenance allowance as per official scheme rules.",
+    "eligibility": "Applicant should belong to a notified minority community, be studying in a recognized institution, and meet the official family income and academic criteria.",
+    "category": "Scholarship",
+    "level": "Central Government",
+    "state": "Central",
+    "tags": ["Student", "Scholarship", "Minority", "Post Matric"]
+  },
+  {
+    "scheme_name": "Pragati Scholarship Scheme for Girl Students",
+    "description": "A scholarship scheme for girl students admitted to technical diploma or degree courses in AICTE-approved institutions.",
+    "benefits": "Financial assistance for eligible girl students as per official AICTE scheme rules.",
+    "eligibility": "Applicant should be a girl student admitted to the first year or lateral entry of an eligible technical course and meet the official family income criteria.",
+    "category": "Scholarship",
+    "level": "Central Government",
+    "state": "Central",
+    "tags": ["Female", "Student", "Technical Education", "Scholarship"]
+  },
+  {
+    "scheme_name": "Saksham Scholarship Scheme for Specially Abled Students",
+    "description": "A scholarship scheme for specially abled students pursuing technical education in AICTE-approved institutions.",
+    "benefits": "Financial assistance for eligible specially abled students as per official AICTE scheme rules.",
+    "eligibility": "Applicant should be a specially abled student admitted to an eligible technical diploma or degree course and meet the official disability and income criteria.",
+    "category": "Scholarship",
+    "level": "Central Government",
+    "state": "Central",
+    "tags": ["Student", "Scholarship", "Disability", "Technical Education"]
+  },
+  {
+    "scheme_name": "National Means-cum-Merit Scholarship Scheme",
+    "description": "A scholarship scheme to support meritorious students from economically weaker sections and reduce dropout at secondary stage.",
+    "benefits": "Scholarship support for selected eligible students as per official scheme rules.",
+    "eligibility": "Applicant should be a student selected through the official process and meet the income, class, and academic conditions stated by the scheme.",
+    "category": "Scholarship",
+    "level": "Central Government",
+    "state": "Central",
+    "tags": ["Student", "Scholarship", "School", "Merit"]
+  },
+  {
+    "scheme_name": "PM YASASVI Central Sector Scheme of Top Class Education in Schools for OBC, EBC and DNT Students",
+    "description": "A scholarship scheme for eligible OBC, EBC and DNT students studying in identified schools.",
+    "benefits": "Scholarship support for eligible school education expenses as per official scheme rules.",
+    "eligibility": "Applicant should belong to eligible OBC, EBC or DNT categories, study in an identified school, and meet the official income and academic criteria.",
+    "category": "Scholarship",
+    "level": "Central Government",
+    "state": "Central",
+    "tags": ["Student", "Scholarship", "OBC", "School"]
+  },
+  {
+    "scheme_name": "Telangana Post Matric Scholarship",
+    "description": "A Telangana scholarship scheme supporting eligible students from specified communities pursuing post-matric education.",
+    "benefits": "Reimbursement or scholarship support as per Telangana government scheme rules.",
+    "eligibility": "Applicant should be a Telangana student from an eligible category, studying a post-matric course, and meet the official income and course conditions.",
+    "category": "Scholarship",
+    "level": "State Government",
+    "state": "Telangana",
+    "tags": ["Student", "Scholarship", "Telangana", "Post Matric"]
+  },
+  {
+    "scheme_name": "Chief Minister Overseas Scholarship Scheme for Minorities, Telangana",
+    "description": "A Telangana scheme supporting eligible minority students pursuing higher education overseas.",
+    "benefits": "Financial assistance for overseas higher education as per Telangana government rules.",
+    "eligibility": "Applicant should belong to an eligible minority community in Telangana, secure admission abroad, and meet the official income, age, and academic criteria.",
+    "category": "Scholarship",
+    "level": "State Government",
+    "state": "Telangana",
+    "tags": ["Student", "Scholarship", "Minority", "Telangana", "Higher Education"]
+  },
+  {
+    "scheme_name": "Rythu Bandhu Scheme",
+    "description": "A Telangana agriculture investment support scheme for eligible farmers.",
+    "benefits": "Investment support for agriculture as per Telangana government scheme rules.",
+    "eligibility": "Applicant should be an eligible farmer or landholder as defined by the Telangana government scheme rules.",
+    "category": "Agriculture",
+    "level": "State Government",
+    "state": "Telangana",
+    "tags": ["Farmer", "Agriculture", "Telangana"]
+  }
+]
