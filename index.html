@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GovScheme AI</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel profile-panel" aria-labelledby="profile-heading">
+        <div class="section-heading">
+          <p class="eyebrow">Telangana and central schemes</p>
+          <h1 id="profile-heading">GovScheme AI</h1>
+        </div>
+
+        <form id="profile-form" class="profile-form">
+          <label>
+            Age
+            <input id="age" name="age" type="number" min="0" max="120" value="22" required>
+          </label>
+
+          <label>
+            Annual income
+            <input id="income" name="income" type="number" min="0" step="1000" value="150000" required>
+          </label>
+
+          <label>
+            Gender
+            <select id="gender" name="gender">
+              <option>Female</option>
+              <option>Male</option>
+              <option>Transgender</option>
+              <option>Any</option>
+            </select>
+          </label>
+
+          <label>
+            State
+            <select id="state" name="state">
+              <option selected>Telangana</option>
+              <option>Andhra Pradesh</option>
+              <option>Karnataka</option>
+              <option>Maharashtra</option>
+              <option>Tamil Nadu</option>
+              <option>Delhi</option>
+            </select>
+          </label>
+
+          <label>
+            Occupation
+            <select id="occupation" name="occupation">
+              <option selected>Student</option>
+              <option>Farmer</option>
+              <option>Entrepreneur</option>
+              <option>Worker</option>
+              <option>Unemployed</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Social category
+            <select id="category" name="category">
+              <option selected>Any</option>
+              <option>SC</option>
+              <option>ST</option>
+              <option>OBC</option>
+              <option>Minority</option>
+              <option>General</option>
+            </select>
+          </label>
+
+          <label class="checkbox-row">
+            <input id="student" name="student" type="checkbox" checked>
+            Student profile
+          </label>
+
+          <button type="submit">Find matching schemes</button>
+        </form>
+      </section>
+
+      <section class="results-area" aria-labelledby="results-heading">
+        <div class="toolbar">
+          <div>
+            <p class="eyebrow">Live scheme search</p>
+            <h2 id="results-heading">Recommended schemes</h2>
+          </div>
+          <label class="search-box">
+            Search
+            <input id="search" type="search" placeholder="Scholarship, housing, farmer">
+          </label>
+          <label>
+            Category
+            <select id="category-filter">
+              <option value="">All categories</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="status" class="status" role="status">Submit the form to fetch live scheme data.</div>
+        <div id="cards" class="scheme-grid" aria-live="polite"></div>
+
+        <details class="raw-json">
+          <summary>Raw API JSON</summary>
+          <pre id="raw-json">No API response yet.</pre>
+        </details>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
