@@ -1,4 +1,4 @@
-﻿# myScheme API Notes
+# myScheme API Notes
 
 GovScheme AI is wired to the myScheme search endpoint from the project brief:
 
@@ -54,3 +54,7 @@ So the Streamlit integration, loading state, raw JSON viewer, and error state ar
 ```
 
 It also supports variants such as `scheme_name`, `schemeName`, `briefDescription`, and `eligibilityCriteria`.
+
+## Source URLs
+
+When `source_url` is not provided in the API response, the mapper applies fallback logic in `scheme_source_url()` to provide appropriate official portal links based on scheme keywords.

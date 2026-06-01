@@ -1,6 +1,7 @@
 ﻿import html
 from typing import Any
 import json
+from urllib.parse import quote_plus
 
 import streamlit as st
 
@@ -53,7 +54,14 @@ def load_local_sample_data() -> list[dict[str, Any]]:
 
 
 def render_scheme_card(scheme: dict[str, Any]) -> None:
-    source_url = scheme.get("source_url")
+    source_url = scheme.get("source_url") or f"https://www.myscheme.gov.in/search?q={quote_plus(scheme.get('title', ''))}"
+    state_pill = f"<span class=\"pill\">{safe(scheme['state'])}</span>" if scheme.get("state") else ""
+    uses_fallback_source = "myscheme.gov.in/search?q=" in source_url
+    button_label = "View scheme details" if uses_fallback_source else "Apply now"
+    source_note = (
+        "This link opens the official scheme page." if not uses_fallback_source
+        else "This is a myScheme search result because a direct official URL is not available."
+    )
 
     st.markdown(
         f"""
@@ -62,16 +70,25 @@ def render_scheme_card(scheme: dict[str, Any]) -> None:
                 <span class="pill score-pill">{safe(scheme['match_score'])}% match</span>
                 <span class="pill">{safe(scheme['category'])}</span>
                 <span class="pill">{safe(scheme['level'])}</span>
+                {state_pill}
             </div>
             <h3>{safe(scheme['title'])}</h3>
             <p>{safe(scheme['description'] or 'Description unavailable from the API response.')}</p>
             <p><strong>Benefits:</strong> {safe(scheme['benefits'] or 'Benefit details unavailable from the API response.')}</p>
             <p><strong>Eligibility:</strong> {safe(scheme['eligibility'] or 'Eligibility details unavailable from the API response.')}</p>
-            <p><strong>Source:</strong> <a href="{safe(source_url)}" target="_blank">{safe(source_url or "Official source")}</a></p>
+            <p><strong>Reference:</strong> {safe(scheme.get('reference_text', 'Official myScheme portal and trusted government sources.'))}</p>
+            <p><strong>Source:</strong> <a href="{safe(source_url)}" target="_blank">View official scheme details</a></p>
+            <p style="margin-top:0.25rem; color:#5d6878; font-size:0.9rem;">{safe(source_note)}</p>
             <p><strong>Why matched:</strong> {safe(scheme['match_reason'])}</p>
         </div>
         """,
         unsafe_allow_html=True,
+    )
+    st.link_button(
+        button_label,
+        source_url,
+        key=f"apply_{quote_plus(scheme.get('title', ''))}",
+        use_container_width=True,
     )
 
 
@@ -164,3 +181,23 @@ with left:
     elif schemes:
         st.warning("No recommended schemes match the current search or category filter.")
 
+with right:
+    st.subheader("Top recommendation")
+    if recommendations:
+        best = recommendations[0]
+        st.markdown(
+            f"""
+            <div class="scheme-card">
+                <h3>{safe(best['title'])}</h3>
+                <div class="pill-row">
+                    <span class="pill score-pill">{safe(best['match_score'])}% match</span>
+                    <span class="pill">{safe(best['category'])}</span>
+                </div>
+                <p>{safe(best['description'] or 'No description available.')}</p>
+                <p><strong>Why this scheme?</strong> {safe(best['match_reason'])}</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        st.info("Run a profile search to load recommendations here.")

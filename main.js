@@ -1,4 +1,4 @@
-﻿import { fetchSchemes } from "./services/schemeApi.js";
+import { fetchSchemes } from "./services/schemeApi.js";
 import { mapSchemes, filterSchemes, getCategories } from "./services/schemeMapper.js";
 import { recommendSchemes } from "./services/eligibilityEngine.js";
 
@@ -69,7 +69,7 @@ function renderCards() {
 
   setStatus(`Showing ${visibleSchemes.length} matching scheme${visibleSchemes.length === 1 ? "" : "s"}.`);
 
-visibleSchemes.forEach((scheme) => {
+  visibleSchemes.forEach((scheme) => {
     const card = document.createElement("article");
     card.className = "scheme-card";
     card.innerHTML = `
@@ -115,5 +115,3 @@ form.addEventListener("submit", (event) => {
 
 searchEl.addEventListener("input", renderCards);
 categoryFilterEl.addEventListener("change", renderCards);
-
-
