@@ -1,4 +1,40 @@
-﻿# GovScheme AI Streamlit App
+﻿# GovScheme AI
+
+Live demo: https://kaila-pavani-bh9ouqwlsbwvxdqub4akq.streamlit.app
+
+This repository contains a Streamlit prototype that matches users with relevant government schemes using deterministic rules and a small frontend.
+
+Quick start (local)
+```bash
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
+
+Deploy (Streamlit Cloud)
+- Connect your GitHub account to Streamlit Cloud
+- Create a new app and select this repository
+- Branch: `main`
+- Main file path: `app.py`
+- Enable **Auto-deploy** in the app Settings to redeploy on pushes to `main`.
+
+Secrets / API keys
+- Add any API keys (myscheme or others) in Streamlit Cloud: Manage app → Secrets.
+
+Save / share
+- The live app URL is above. Bookmark or share it with your team.
+
+CI
+- A small GitHub Action is included at `.github/workflows/ci.yml` that runs a basic Python syntax check on PRs.
+
+How to push changes to GitHub (from local)
+```bash
+git add .
+git commit -m "Save README and CI"
+git push github main
+```
+
+If you want me to add a release tag or create a more advanced CI (formatting, tests), tell me which checks you prefer.
+# GovScheme AI Streamlit App
 
 A Streamlit prototype for matching citizens with government schemes using live myScheme data, frontend-friendly scheme cards, search/category filters, and deterministic recommendation scoring.
 
